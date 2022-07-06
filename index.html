@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="khu.css">
+
+<body style="color: white;font-size: 20px;text-indent: 12px;">
+<div style="width: 600px;height: 300px;background: white; background-image: url(https://gamek.mediacdn.vn/thumb_w/640/133514250583805952/2022/6/4/photo-1-1654333508977448940123.jpg);">
+	<div style="width: 600px;height: 50px;background: black;text-align: center;font-size: 30px;color: white;">
+		Bảng thông minh (chỉ có số)
+	</div>
+	<div style="width: 600px;height: 70px;text-indent: 12px;font-size: 20px;color: white;">
+		<form onsubmit="return false">
+		Nhập số
+		<br>
+		<input type="number" placeholder="Nhập số bất kì" id="so">
+		<button id="nut" onclick="caculate()" type="button">ok</button>
+	</form>
+	</div>
+	<div id="chanle"></div>
+	<div id="nguyento"></div>
+	<div id="lap"></div>
+	<div id="solan"></div>
+</div>
+</body>
+<script type="text/javascript">
+
+let btn = document.getElementById("so");
+btn.addEventListener("keydown",function(event) {
+         if(event.keyCode === 13){
+             event.preventDefault;
+             document.getElementById("nut").click();
+   
+         }
+     });
+
+let solan = 0;
+
+function caculate(){
+	let so = parseInt(document.getElementById("so").value);
+	if (so%2 == 0) {
+			document.getElementById("chanle").innerHTML = 'Đây là số chẵn';
+		}
+	else if (so%2 == 1){
+			document.getElementById("chanle").innerHTML = 'Đây là số lẻ';
+		}
+	else{
+			document.getElementById("chanle").innerHTML = 'Đây là số thập phân';
+		}
+	let nguyento = 1;
+	if (so >0) {
+	 	if (so < 2) {
+	 		nguyento=0;
+	 	}
+	 }
+	else if (so%2 == 0) {
+	 		nguyento=0;
+	 }
+	 else{for (let i = 3; i < Math.sqrt(so); i+=2){
+	 	if (so%i == 0) {
+	 		nguyento=0;
+	 		break;
+	 	}
+	 } 
+	}
+	if (nguyento == 0) {
+		document.getElementById("nguyento").innerHTML = 'Đây không phải là số nguyên tố'
+	}
+	else{
+		document.getElementById("nguyento").innerHTML = 'Đây là số nguyên tố'	
+	}
+	let lap = ' ';
+	if (so>=1) {
+		for(i=1;i<=so;i++){
+			lap= lap + i + ' ';
+		}
+	}
+	else{
+		for(i=so;i<=-1;i++){
+			lap= lap + i + ' ';
+		}
+	}
+	document.getElementById('lap').innerHTML= lap;
+
+	solan+= 1;
+
+	document.getElementById("solan").innerHTML = ('Bạn đã nhập '+ solan + ' số')
+}
+</script>
+</html>

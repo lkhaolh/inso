@@ -1,0 +1,37 @@
+#so{
+		width: 500px;
+		height: 20px;
+		border-radius: 5px;
+		border: white;
+		margin-left: 10px;
+	}
+#nut{
+		width: 40px;
+		height: 24px;
+		border-radius: 5px;
+		border: white;
+	}
+#chanle{
+		width: 100%;
+		height: 40px;
+		/*background: hotpink;*/
+		float: left;
+	}
+#nguyento{
+		width: 100%;
+		height: 40px;
+		/*background: seagreen;*/
+		float: left;
+	}
+#lap{
+		width: 100%;
+		height: 40px;
+		/*background: burlywood;*/
+		float: left;
+	}
+#solan{
+		width: 100%;
+		height: 40px;
+		/*background: blueviolet;*/
+		float: left;
+	}
